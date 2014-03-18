@@ -87,12 +87,17 @@ function uploadToS3(file, url) {
         var percentLoaded = Math.round((e.loaded / e.total) * 100);
 
         if(percentLoaded != 100) {
+        
           setProgress(percentLoaded, 'Uploading.');
+        
         } else {
+
+          console.log(file);
+        
           setProgress(percentLoaded, 'Finalizing.');
 
           var div = document.createElement("div");
-          div.innerHTML = '<a href="'+window.amazon_path+file.name+'">'+file.name+'</a>';
+          div.innerHTML = 'Your file <a href="'+window.amazon_path+file.name+'" target="_blank">'+file.name+'</a> have been uploaded. Here is the link that you can share: '+window.amazon_path+file.name;
           document.body.insertBefore(div, document.body.firstChild);          
         }
         
