@@ -1,0 +1,4 @@
+- Don't overwrite file when already exist
+- Detect browser with modernizr
+	- Alert if old browser (IE) that not support CORS
+- Design
